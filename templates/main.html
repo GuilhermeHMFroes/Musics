@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+  <head>
+
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/x-icon">
+    <title>Musics</title>
+
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/BootStrap/bootstrap.min.css') }}">
+
+  </head>
+
+  <body>
+
+    <script>
+
+      {% if musica_excluida %}
+        alert("Músicas excluída com sucesso!");
+      {% endif %}
+
+      {% if musica_criada %}
+        alert("Música cadastrada com sucesso!");
+      {% endif %}
+
+      {% if comunicacao %}
+        alert("{{ comunicacao }}");
+      {% endif %}
+
+    </script>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+      <a style="margin-left: 250px" class="navbar-brand" href="/">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+        Musics
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('index') }}">Minhas Músicas</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('cadastro') }}">Cadastrar Música</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('deletar') }}">Excluir Música</a>
+          </li>
+
+        </ul>
+      </div>
+
+    </nav>
+
+    <br>
+
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    <br>
+
+    <!-- coloque aqui o código do rodapé da página -->
+
+  </body>
+
+  <footer class="bg-dark text-center text-white mt-5">
+    <p>&copy; 2023 Musics</p>
+  </footer>
+
+</html>

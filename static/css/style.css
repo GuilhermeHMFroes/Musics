@@ -1,0 +1,26 @@
+.separador {
+    border-top: 1px solid #ced4da;
+    }
+
+.video{
+    float: left;
+    }
+
+.texto{
+    float: center;
+    text-align: justify;
+    }
+
+.organizador{
+    display: flex;
+}
+
+body {
+    margin-bottom: 100px; /* adicione uma margem inferior para a seção principal */
+    }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;height: 35px; /* defina uma altura para o rodapé */
+    }

@@ -1,0 +1,33 @@
+Exception on /deletar [POST]
+Traceback (most recent call last):
+  File "/home/guilherme/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3614, in _get_impl
+    primary_key_identity = list(
+  File "/home/guilherme/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3615, in <genexpr>
+    primary_key_identity[prop.key]
+  File "/home/guilherme/.local/lib/python3.8/site-packages/werkzeug/datastructures.py", line 375, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/guilherme/.local/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/guilherme/.local/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/guilherme/.local/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/guilherme/.local/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/guilherme/Área de Trabalho/Faculdade/ArquiteturaDeSoftware/Musics/controllers/musica.py", line 41, in delete_musica
+    musica = Musica.query.get(id)
+  File "<string>", line 2, in get
+  File "/home/guilherme/.local/lib/python3.8/site-packages/sqlalchemy/util/deprecations.py", line 383, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "/home/guilherme/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 1130, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "/home/guilherme/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 1139, in _get_impl
+    return self.session._get_impl(
+  File "/home/guilherme/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3620, in _get_impl
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Incorrect names of values in identifier to formulate primary key for session.get(); primary key attribute names are 'id' (synonym names are also accepted)

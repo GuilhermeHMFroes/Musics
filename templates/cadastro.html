@@ -1,0 +1,42 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+  <h1 class="text-center">Cadastrar nova música</h1>
+
+  <div class="separador"></div><br>
+
+  <form method="POST" action="{{ url_for('musica_bp.create_musica') }}">
+
+    <div>
+      <label for="titulo">Título:</label>
+      <input type="text" name="titulo" id="titulo" required>
+    </div><br>
+
+    <div>
+      <label for="artista">Artista:</label>
+      <input type="text" name="artista" id="artista" required>
+    </div><br>
+
+    <div>
+      <label for="video">Vídeo:</label>
+      <input type="text" name="video" id="video" required>
+    </div><br>
+
+    <div>
+      <label for="link">Link:</label>
+      <input type="text" name="link" id="link" required>
+    </div><br>
+
+    <div>
+      <label for="genero">Gênero:</label>
+      <input type="text" name="genero" id="genero">
+    </div><br>
+
+    <div class="text-center">
+      <button type="submit">Cadastrar</button>
+    </div><br>
+
+  </form>
+
+{% endblock %}

@@ -1,5 +1,5 @@
 
-# Aplicação Flask + arquitetura modelo 
+# Aplicação Flask
 
 ## Passos para inicializar a aplicação
 

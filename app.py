@@ -33,10 +33,3 @@ def deletar():
     else:
         return render_template('deletar.html', musicas=musicas)
     #return render_template('deletar.html')
-
-import logging
-from logging.handlers import RotatingFileHandler
-
-handler = RotatingFileHandler('app.log', maxBytes=10000, backupCount=1)
-handler.setLevel(logging.ERROR)
-app.logger.addHandler(handler)
